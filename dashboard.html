@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FitMate Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="dash-header">
+    <h1>Welcome to FitMate</h1>
+    <p>Your Smart Workout & Nutrition Planner</p>
+  </header>
+
+  <main class="dashboard-content">
+
+    <!-- Today's Tasks -->
+    <section class="dashboard-section">
+      <h2>Today's Tasks</h2>
+      <div class="card-container">
+        <div class="card" onclick="markAsDone(this)">
+          <h3>Do 20 Push-ups</h3>
+        </div>
+        <div class="card" onclick="markAsDone(this)">
+          <h3>Take a 10 min walk</h3>
+        </div>
+        <div class="card" onclick="markAsDone(this)">
+          <h3>Drink 2L Water</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress -->
+    <section class="dashboard-section">
+      <h2>Track Progress</h2>
+      <p>Coming soon: Your personal fitness stats and weekly charts.</p>
+    </section>
+
+    <!-- Workout Explorer Toggle -->
+    <section class="dashboard-section">
+      <h2>More Options</h2>
+      <button class="fetch-btn" onclick="toggleWorkoutExplorer()">Explore Workouts by Muscle</button>
+    </section>
+
+    <!-- Hidden Workout Explorer -->
+    <section id="workoutExplorer" class="dashboard-section" style="display: none;">
+      <h2>🔥 Exercises by Muscle Group (API Ninjas)</h2>
+      <div class="explore-header">
+        <select id="ninjaMuscle">
+          <option value="chest">Chest</option>
+          <option value="back">Back</option>
+          <option value="biceps">Biceps</option>
+          <option value="triceps">Triceps</option>
+          <option value="abdominals">Abs</option>
+          <option value="quadriceps">Quads</option>
+        </select>
+        <button class="fetch-btn" onclick="loadNinjaWorkouts()">Show Workouts</button>
+      </div>
+      <div id="ninjaWorkoutList" class="explore-workouts-grid"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
